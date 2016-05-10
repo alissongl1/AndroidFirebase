@@ -2,6 +2,7 @@ package br.edu.ifce.androidfirebase;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextLogin;
     private EditText editTextPassword;
     private TextView textViewStatus;
+    private Button buttonSignin;
     private String login;
     private String loginDigitado;
     private String password;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     public static final String FIREBASE_REPO = "blinding-heat-9190";
     public static final String FIREBASE_URL = "https://" + FIREBASE_REPO + ".firebaseio.com";
     private Firebase firebase;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
         password = "edu";
         editTextLogin = (EditText) findViewById(R.id.editTextLogin);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
+        buttonSignin = (Button) findViewById(R.id.buttonSignin);
 
         // FIREBASE
         if (savedInstanceState == null){
@@ -59,7 +63,6 @@ public class MainActivity extends AppCompatActivity {
             editTextPassword.setError(getString(R.string.invalid));
         }
     }
-
 
     // TRANSIÇÃO ENTRE TELAS
     private void transitaParaTelaFirebaseShared() {

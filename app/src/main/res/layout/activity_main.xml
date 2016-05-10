@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
-    tools:context="br.edu.loginandroid.MainActivity">
+    tools:context="br.edu.ifce.androidfirebase.MainActivity">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -65,7 +65,6 @@
         android:id="@+id/buttonSignin"
         android:layout_marginTop="@dimen/activity_vertical_margin"
         style="?android:textAppearanceSmall"
-        android:onClick="signin"
         android:paddingTop="@dimen/activity_vertical_margin" />
 
     <LinearLayout
