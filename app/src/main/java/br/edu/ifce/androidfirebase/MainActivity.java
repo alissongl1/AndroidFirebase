@@ -2,15 +2,14 @@ package br.edu.ifce.androidfirebase;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
-import com.firebase.client.core.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -18,7 +17,6 @@ public class MainActivity extends AppCompatActivity {
     private EditText editTextLogin;
     private EditText editTextPassword;
     private TextView textViewStatus;
-    private Button buttonSignin;
     private String login;
     private String loginDigitado;
     private String password;
@@ -40,7 +38,6 @@ public class MainActivity extends AppCompatActivity {
         password = "edu";
         editTextLogin = (EditText) findViewById(R.id.editTextLogin);
         editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        buttonSignin = (Button) findViewById(R.id.buttonSignin);
 
         // FIREBASE
         if (savedInstanceState == null){
@@ -56,8 +53,8 @@ public class MainActivity extends AppCompatActivity {
         passwordDigitado = editTextPassword.getText().toString();
 
         if(login.equals(loginDigitado) && passwordDigitado.equals(password)){
-                // TRANSIÇÃO ENTRE TELAS
-                transitaParaTelaFirebaseShared();
+            // TRANSIÇÃO ENTRE TELAS
+            transitaParaTelaFirebaseShared();
         }
         else{
             editTextPassword.setError(getString(R.string.invalid));
